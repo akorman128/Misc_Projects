@@ -59,4 +59,4 @@ def getSingleItemData(itemUrl):
         print(href)
 
 
-tradeSpider(1)
+Scrape(1)
