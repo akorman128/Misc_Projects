@@ -3,7 +3,7 @@ import requests
 from BeautifulSoup import BeautifulSoup
 
 
-def tradeSpider(maxPages):
+def Scrape(maxPages):
 
     page = 1
 
@@ -11,9 +11,9 @@ def tradeSpider(maxPages):
 
         url = 'https://www.ebay.com/sch/i.html?_from=R40&_nkw=phones&_sacat=0&_fsrp=' + str(page)
 
-        sourceCode = requests.get(url)
+        source_code = requests.get(url)
 
-        plainText = sourceCode.text
+        plain_text = sourceCode.text
 
         soup = BeautifulSoup(plainText)
 
@@ -37,19 +37,18 @@ def tradeSpider(maxPages):
 
 def getSingleItemData(itemUrl):
 
-    sourceCode = requests.get(itemUrl)
+    source_code = requests.get(itemUrl)
 
-    plainText = sourceCode.text
+    plain_text = sourceCode.text
 
     soup = BeautifulSoup(plainText)
 
-    for itemPrice in soup.findAll('span',{'class':'notranslate'}):
+    for item_price in soup.findAll('span',{'class':'notranslate'}):
 
-        print(itemPrice.string)
-
-        print(' ')
+        print(item_price.string)
 
         print(' ')
+
 
     for link in soup.findAll('a'):
 
@@ -59,8 +58,5 @@ def getSingleItemData(itemUrl):
 
         print(href)
 
-        print(' ')
-
-        print(' ')
 
 tradeSpider(1)
