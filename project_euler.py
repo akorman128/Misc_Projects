@@ -1,4 +1,17 @@
+#Project Euler 16
 
+# def power_sum(exp):
+#     sum = 0
+#
+#     power = 2**exp
+#     power = str(power)
+#     for x in range(len(power)):
+#         sum += int(power[x])
+#     return sum
+#
+# power_sum(1000)
+
+#_______________________
 
 # def fibonacci_sum(num):
 #     fib = [1,2]
